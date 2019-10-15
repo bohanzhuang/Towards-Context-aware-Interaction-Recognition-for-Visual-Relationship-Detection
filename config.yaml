@@ -1,0 +1,50 @@
+# If want to input None, use !!null
+
+# Resume Training, start from scratch or resume training
+resume_train: False
+load_epoch: 6
+fine_tune: False
+
+# Learning Parameters
+n_epochs: 20
+learning_rate: 0.001  # def:0.01
+lr_policy: step  # def: step or auto
+lr_adapt_threshold: 0.01
+lr_step: [10, 15, 20]  # def: 20, learning rate will be reduced by 10 times at these steps
+
+
+batch_size: 32
+feature_dim: 512
+language_dim: 600
+rank_dim: 50
+num_classes: 70
+
+
+# Data
+use_data_layer: False
+rand_crop: False # def: True
+shuffle: True
+para_load: False
+batch_crop_mirror: False  # if False, do randomly on each image separately
+
+
+# Weight Decay 
+weight_decay: 0.0005 # def: 0.0005
+
+# Directories
+train_label_file: 
+val_label_file: 
+weights_dir: ./weights/
+finetune_weights_dir: ./weights/vgg16.pth
+train_folder: 
+val_folder: 
+train_language_feature: 
+test_language_feature:
+
+
+
+snapshot_freq: 1  # frequency of saving weights
+print_train_error: True
+print_freq: 20  # frequency of printing training error rate
+
+
